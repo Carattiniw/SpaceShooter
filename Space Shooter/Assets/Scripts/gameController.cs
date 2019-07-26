@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour
 {
-    public GameObject hazard;
+    public GameObject[] hazards;
     public Vector3 spawnValues;
     public int hazardCount;
     public float spawnWait;
@@ -17,6 +17,7 @@ public class gameController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI restartText;
     public TextMeshProUGUI gameoverText;
+    public TextMeshProUGUI winText;
 
     private bool gameOver;
     private bool restart;
@@ -29,6 +30,7 @@ public class gameController : MonoBehaviour
         scoreText.text = "";
         gameoverText.text = "";
         restartText.text = "";
+        winText.text = "";
         score = 0;
         UpdateScore();
         StartCoroutine (SpawnWaves ());
@@ -38,7 +40,7 @@ public class gameController : MonoBehaviour
     {
         if (restart)
         {
-            if (Input.GetKeyDown(KeyCode.R))//restart game with r key
+            if (Input.GetKeyDown(KeyCode.T))//restart game with r key
             {
                 SceneManager.LoadScene(0);
             }
@@ -57,6 +59,7 @@ public class gameController : MonoBehaviour
         {
             for (int i = 0; i < hazardCount; i++)
             {
+                GameObject hazard = hazards[Random.Range(0,hazards.Length)];
                 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate (hazard, spawnPosition, spawnRotation);
@@ -66,7 +69,7 @@ public class gameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press 'R' for Restart or 'Esc' to quit";
+                restartText.text = "Press 'T' to try again or 'Esc' to quit";
                 restart = true;
                 break;
             }
@@ -81,12 +84,24 @@ public class gameController : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Points: " + score;
+
+        if (score >= 100)
+        {
+            endGame();
+        }
     }
 
     public void GameOver()
     {
         gameoverText.text = "Game Over!";
         gameOver = true;
+    }
+
+    void endGame()
+    {
+        gameOver = true;
+        gameoverText.text = "Game Over!";
+        winText.text = "GAME CREATED BY WILLIAM CARATTINI";
     }
 }

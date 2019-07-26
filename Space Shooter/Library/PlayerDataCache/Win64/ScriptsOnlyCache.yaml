@@ -1,13 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BGScroller
     - Mover
     - destroyByBoundary
     - destroyByContact
     - destroyByTime
+    - evasiveManeuver
     - gameController
     - playerController
     - randomRotator
+    - weaponController
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -68,40 +71,48 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9340}
+      Script: {instanceID: 9362}
     - Class: 114
-      Script: {instanceID: 9346}
+      Script: {instanceID: 9368}
     - Class: 114
-      Script: {instanceID: 9352}
+      Script: {instanceID: 9374}
     - Class: 114
-      Script: {instanceID: 9396}
+      Script: {instanceID: 9418}
     - Class: 114
-      Script: {instanceID: 9744}
+      Script: {instanceID: 9440}
     - Class: 114
-      Script: {instanceID: 10080}
+      Script: {instanceID: 9708}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 9770}
     - Class: 114
-      Script: {instanceID: 10240}
+      Script: {instanceID: 10008}
     - Class: 114
-      Script: {instanceID: 10474}
+      Script: {instanceID: 10016}
     - Class: 114
-      Script: {instanceID: 12254}
+      Script: {instanceID: 10108}
     - Class: 114
-      Script: {instanceID: 13344}
+      Script: {instanceID: 10112}
     - Class: 114
-      Script: {instanceID: 14250}
+      Script: {instanceID: 10122}
     - Class: 114
-      Script: {instanceID: 14648}
+      Script: {instanceID: 10230}
     - Class: 114
-      Script: {instanceID: 15344}
+      Script: {instanceID: 10274}
     - Class: 114
-      Script: {instanceID: 17656}
+      Script: {instanceID: 10380}
     - Class: 114
-      Script: {instanceID: 19006}
+      Script: {instanceID: 10510}
+    - Class: 114
+      Script: {instanceID: 10656}
+    - Class: 114
+      Script: {instanceID: 12744}
+    - Class: 114
+      Script: {instanceID: 14200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -362,6 +373,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 21b9c8d78f13c3f17b6734fd9e36b861
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: gameController
+  - hash:
+      serializedVersion: 2
       Hash: 9e70ecf91466f07d9bd649be625cae52
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -590,6 +607,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 813a98d7c38886af7cdb0e991a546577
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: randomRotator
+  - hash:
+      serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
     assemblyName: Unity.Analytics.Tracker.dll
     namespaceName: UnityEngine.Analytics
@@ -656,6 +679,18 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: destroyByBoundary
+  - hash:
+      serializedVersion: 2
+      Hash: d3bbd1f86b55a6168b664522b2cf57b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: destroyByTime
+  - hash:
+      serializedVersion: 2
       Hash: 3aeec2416520303994f9d66901c73317
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -666,6 +701,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 3aeec2416520303994f9d66901c73317
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: destroyByContact
   - hash:
       serializedVersion: 2
       Hash: 35a9693c388776aaf487636491a20f11
@@ -746,6 +787,12 @@ ScriptsOnlyBuild:
     className: Done_DestroyByBoundary
   - hash:
       serializedVersion: 2
+      Hash: 69fd753491e9d7ae453683bfa19f3ace
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: playerController
+  - hash:
+      serializedVersion: 2
       Hash: 58e68364412c67eae2bdb4954be2dcc2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -768,6 +815,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Mover
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -824,6 +877,12 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
+      Hash: 8a90a6a7785b9f7e14cb8e3897dd1aed
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BGScroller
+  - hash:
+      serializedVersion: 2
       Hash: 96579b1d7c32aebb6c65db101ee7a10b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -836,48 +895,17 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 69fd753491e9d7ae453683bfa19f3ace
+      Hash: de7d6a5820dded6c7f75780e98f1dc41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: playerController
+    className: weaponController
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: 757d56d0910fdc18d03e5b801da35a3f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Mover
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: destroyByBoundary
-  - hash:
-      serializedVersion: 2
-      Hash: 813a98d7c38886af7cdb0e991a546577
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: randomRotator
-  - hash:
-      serializedVersion: 2
-      Hash: 3aeec2416520303994f9d66901c73317
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: destroyByContact
-  - hash:
-      serializedVersion: 2
-      Hash: 94ccc70dc992124a79a6dd76e22f617e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: gameController
-  - hash:
-      serializedVersion: 2
-      Hash: d3bbd1f86b55a6168b664522b2cf57b3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: destroyByTime
+    className: evasiveManeuver
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/willi/OneDrive/Documents/University of Central Florida/DIG3480
-    - Computer as a Medium/Tutorials/Carattini_William_DIG3480/Space Shooter.exe
+  playerPath: C:/Users/willi/Desktop/Carattini_William/Space Shooter.exe

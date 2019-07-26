@@ -27,12 +27,17 @@ public class destroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        if (other.tag == "Boundary") //will ignore the boundary gameObject
+        //if (other.tag == "Boundary" || other.tag == "Enemy") //will ignore the boundary gameObject
+        if (other.CompareTag ("Boundary") || other.CompareTag("Enemy"))
         {
-            return;
+            return;//will ignore the boundary gameObject and enemy
         }
 
-        Instantiate(explosion, transform.position, transform.rotation);
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+        }
+        
         if (other.tag == "Player")
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
