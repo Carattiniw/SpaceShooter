@@ -22,6 +22,8 @@ public class gameController : MonoBehaviour
     private bool gameOver;
     private bool restart;
     private int score;
+    private controlParticles m_particleSystem;
+    private BGScroller bgSpeed;
 
     void Start ()
     {
@@ -34,6 +36,28 @@ public class gameController : MonoBehaviour
         score = 0;
         UpdateScore();
         StartCoroutine (SpawnWaves ());
+
+        GameObject m_particleSystemObject = GameObject.FindWithTag ("ParticleSystem");
+        if (m_particleSystemObject != null)
+        {
+            m_particleSystem = m_particleSystemObject.GetComponent <controlParticles>();
+        }
+
+        if (m_particleSystem == null)
+        {
+            Debug.Log ("Cannot find 'ParticleSystem' script");
+        }
+
+        GameObject bgSpeedObject = GameObject.FindWithTag ("background");
+        if (bgSpeedObject != null)
+        {
+            bgSpeed = bgSpeedObject.GetComponent <BGScroller>();
+        }
+
+        if (bgSpeed == null)
+        {
+            Debug.Log ("Cannot find 'ParticleSystem' script");
+        }
     }
 
     void Update()
@@ -59,7 +83,7 @@ public class gameController : MonoBehaviour
         {
             for (int i = 0; i < hazardCount; i++)
             {
-                GameObject hazard = hazards[Random.Range(0,hazards.Length)];
+                GameObject hazard = hazards[Random.Range (0, hazards.Length)];
                 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate (hazard, spawnPosition, spawnRotation);
@@ -69,7 +93,7 @@ public class gameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press 'T' to try again or 'Esc' to quit";
+                restartText.text = "Press 'T' for Restart or 'Esc' to quit";
                 restart = true;
                 break;
             }
@@ -88,13 +112,14 @@ public class gameController : MonoBehaviour
 
         if (score >= 100)
         {
+            gameOver = true;
+            restart = true;
             endGame();
         }
     }
 
     public void GameOver()
     {
-        gameoverText.text = "Game Over!";
         gameOver = true;
     }
 
@@ -103,5 +128,7 @@ public class gameController : MonoBehaviour
         gameOver = true;
         gameoverText.text = "Game Over!";
         winText.text = "GAME CREATED BY WILLIAM CARATTINI";
+        m_particleSystem.speedUp();
+        bgSpeed.bgScrollSpeedUp();
     }
 }
